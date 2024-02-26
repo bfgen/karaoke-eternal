@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+
+    karaoke-eternal:
+        image: radrootllc/karaoke-eternal
+        container_name: karaoke-eternal
+        volumes:
+            - ./database:/config
+            - ./media:/mnt/karaoke
+        ports:
+            - "8888:8080"
+        restart: unless-stopped
